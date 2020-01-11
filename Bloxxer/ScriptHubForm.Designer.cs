@@ -40,9 +40,9 @@
             // 
             // descriptionTextBox
             // 
-            this.descriptionTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.descriptionTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
             this.descriptionTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.descriptionTextBox.ForeColor = System.Drawing.SystemColors.Window;
+            this.descriptionTextBox.ForeColor = System.Drawing.SystemColors.WindowText;
             this.descriptionTextBox.Location = new System.Drawing.Point(143, 233);
             this.descriptionTextBox.Name = "descriptionTextBox";
             this.descriptionTextBox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
@@ -53,7 +53,7 @@
             // 
             // executeBtn
             // 
-            this.executeBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.executeBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
             this.executeBtn.FlatAppearance.BorderSize = 0;
             this.executeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.executeBtn.Font = new System.Drawing.Font("Calibri", 12F);
@@ -67,7 +67,7 @@
             // 
             // loadBtn
             // 
-            this.loadBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.loadBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
             this.loadBtn.FlatAppearance.BorderSize = 0;
             this.loadBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.loadBtn.Font = new System.Drawing.Font("Calibri", 12F);
@@ -91,6 +91,7 @@
             // 
             this.authorLabel.AutoSize = true;
             this.authorLabel.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.authorLabel.ForeColor = System.Drawing.SystemColors.WindowText;
             this.authorLabel.Location = new System.Drawing.Point(141, 211);
             this.authorLabel.Name = "authorLabel";
             this.authorLabel.Size = new System.Drawing.Size(0, 13);
@@ -100,6 +101,7 @@
             // 
             this.versionLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.versionLabel.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.versionLabel.ForeColor = System.Drawing.SystemColors.WindowText;
             this.versionLabel.Location = new System.Drawing.Point(400, 211);
             this.versionLabel.Name = "versionLabel";
             this.versionLabel.Size = new System.Drawing.Size(80, 13);
@@ -109,10 +111,10 @@
             // 
             this.scriptList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.scriptList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.scriptList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
             this.scriptList.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.scriptList.Font = new System.Drawing.Font("Calibri", 9F);
-            this.scriptList.ForeColor = System.Drawing.SystemColors.Window;
+            this.scriptList.ForeColor = System.Drawing.SystemColors.WindowText;
             this.scriptList.HideSelection = false;
             this.scriptList.Location = new System.Drawing.Point(13, 13);
             this.scriptList.Name = "scriptList";
@@ -128,7 +130,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(493, 365);
             this.Controls.Add(this.scriptList);
             this.Controls.Add(this.versionLabel);
@@ -137,7 +139,7 @@
             this.Controls.Add(this.loadBtn);
             this.Controls.Add(this.executeBtn);
             this.Controls.Add(this.descriptionTextBox);
-            this.ForeColor = System.Drawing.SystemColors.Window;
+            this.ForeColor = System.Drawing.SystemColors.WindowText;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "ScriptHubForm";

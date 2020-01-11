@@ -9,7 +9,7 @@ namespace Bloxxer.Utils
 {
     public class JsonManager
     {
-        private static readonly string PrerequisitesPath = Environment.CurrentDirectory + @"\resources\prerequisites.json";
+        private static readonly string PrerequisitesPath = Directory.GetCurrentDirectory() + @"\resources\prerequisites.json";
 
         private static void CheckValidJson()
         {
@@ -45,7 +45,7 @@ namespace Bloxxer.Utils
                         new JProperty("method", 0),
                         new JProperty("injectOnExecution", false)
                     }),
-                    new JProperty("darkMode", true),
+                    new JProperty("theme", 0),
                     new JProperty("bloxxerOnTop", false),
                     new JProperty("robloxOnTop", true),
                     new JProperty("recentlyUsed")
@@ -62,7 +62,7 @@ namespace Bloxxer.Utils
 
             GlobalVars.RobloxOnTop             = Convert.ToBoolean(preferences["robloxOnTop"]);
             GlobalVars.BloxxerOnTop            = Convert.ToBoolean(preferences["bloxxerOnTop"]);
-            GlobalVars.DarkMode                = Convert.ToBoolean(preferences["darkMode"]);
+            GlobalVars.Theme                   = Convert.ToInt32(preferences["theme"]);
             GlobalVars.ExecutionMessage        = Convert.ToBoolean(preferences["execution"]["show"]);
             GlobalVars.ExecutionMessageMethod  = Convert.ToInt32  (preferences["execution"]["method"]);
             GlobalVars.InjectOnExecution       = Convert.ToBoolean(preferences["execution"]["injectOnExecution"]);

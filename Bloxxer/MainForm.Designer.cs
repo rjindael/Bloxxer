@@ -64,12 +64,12 @@
             // 
             this.injectBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.injectBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.injectBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.injectBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
             this.injectBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.injectBtn.FlatAppearance.BorderSize = 0;
             this.injectBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.injectBtn.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.injectBtn.ForeColor = System.Drawing.SystemColors.Window;
+            this.injectBtn.ForeColor = System.Drawing.SystemColors.WindowText;
             this.injectBtn.Location = new System.Drawing.Point(17, 328);
             this.injectBtn.Name = "injectBtn";
             this.injectBtn.Size = new System.Drawing.Size(150, 35);
@@ -82,12 +82,12 @@
             // 
             this.executeBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.executeBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.executeBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.executeBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
             this.executeBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.executeBtn.FlatAppearance.BorderSize = 0;
             this.executeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.executeBtn.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.executeBtn.ForeColor = System.Drawing.SystemColors.Window;
+            this.executeBtn.ForeColor = System.Drawing.Color.Black;
             this.executeBtn.Location = new System.Drawing.Point(175, 328);
             this.executeBtn.Name = "executeBtn";
             this.executeBtn.Size = new System.Drawing.Size(150, 35);
@@ -100,7 +100,7 @@
             // 
             this.recentlyUsedList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.recentlyUsedList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.recentlyUsedList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
             this.recentlyUsedList.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.recentlyUsedList.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.recentlyUsedList.ForeColor = System.Drawing.SystemColors.Window;
@@ -118,7 +118,7 @@
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.Window;
+            this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(658, 38);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(131, 23);
@@ -130,12 +130,12 @@
             // 
             this.optionsBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.optionsBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.optionsBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.optionsBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
             this.optionsBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.optionsBtn.FlatAppearance.BorderSize = 0;
             this.optionsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.optionsBtn.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.optionsBtn.ForeColor = System.Drawing.SystemColors.Window;
+            this.optionsBtn.ForeColor = System.Drawing.Color.Black;
             this.optionsBtn.Location = new System.Drawing.Point(491, 328);
             this.optionsBtn.Name = "optionsBtn";
             this.optionsBtn.Size = new System.Drawing.Size(150, 35);
@@ -148,12 +148,12 @@
             // 
             this.scriptHubBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.scriptHubBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.scriptHubBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.scriptHubBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
             this.scriptHubBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.scriptHubBtn.FlatAppearance.BorderSize = 0;
             this.scriptHubBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.scriptHubBtn.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.scriptHubBtn.ForeColor = System.Drawing.SystemColors.Window;
+            this.scriptHubBtn.ForeColor = System.Drawing.Color.Black;
             this.scriptHubBtn.Location = new System.Drawing.Point(333, 328);
             this.scriptHubBtn.Name = "scriptHubBtn";
             this.scriptHubBtn.Size = new System.Drawing.Size(150, 35);
@@ -166,7 +166,7 @@
             // 
             this.execAsLuaC.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.execAsLuaC.AutoSize = true;
-            this.execAsLuaC.ForeColor = System.Drawing.SystemColors.Window;
+            this.execAsLuaC.ForeColor = System.Drawing.SystemColors.WindowText;
             this.execAsLuaC.Location = new System.Drawing.Point(17, 297);
             this.execAsLuaC.Name = "execAsLuaC";
             this.execAsLuaC.Size = new System.Drawing.Size(145, 19);
@@ -176,7 +176,7 @@
             // 
             // menuStrip1
             // 
-            this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.editToolStripMenuItem,
@@ -194,7 +194,7 @@
             this.openFileToolStripMenuItem,
             this.executeScriptToolStripMenuItem});
             this.fileToolStripMenuItem.Font = new System.Drawing.Font("Calibri", 10F);
-            this.fileToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Window;
+            this.fileToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(39, 21);
             this.fileToolStripMenuItem.Text = "File";
@@ -204,14 +204,14 @@
             // openFileToolStripMenuItem
             // 
             this.openFileToolStripMenuItem.Name = "openFileToolStripMenuItem";
-            this.openFileToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.openFileToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.openFileToolStripMenuItem.Text = "Open...";
             this.openFileToolStripMenuItem.Click += new System.EventHandler(this.OpenFileToolStripMenuItem_Click);
             // 
             // executeScriptToolStripMenuItem
             // 
             this.executeScriptToolStripMenuItem.Name = "executeScriptToolStripMenuItem";
-            this.executeScriptToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.executeScriptToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.executeScriptToolStripMenuItem.Text = "Execute File...";
             this.executeScriptToolStripMenuItem.Click += new System.EventHandler(this.ExecuteScriptToolStripMenuItem_Click);
             // 
@@ -224,7 +224,7 @@
             this.toolStripSeparator1,
             this.selectAllToolStripMenuItem});
             this.editToolStripMenuItem.Font = new System.Drawing.Font("Calibri", 10F);
-            this.editToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Window;
+            this.editToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
             this.editToolStripMenuItem.Size = new System.Drawing.Size(42, 21);
             this.editToolStripMenuItem.Text = "Edit";
@@ -235,7 +235,7 @@
             // 
             this.cutToolStripMenuItem.Name = "cutToolStripMenuItem";
             this.cutToolStripMenuItem.ShortcutKeyDisplayString = "Ctrl+X";
-            this.cutToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.cutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.cutToolStripMenuItem.Text = "Cut";
             this.cutToolStripMenuItem.Click += new System.EventHandler(this.CutToolStripMenuItem_Click);
             // 
@@ -243,7 +243,7 @@
             // 
             this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
             this.copyToolStripMenuItem.ShortcutKeyDisplayString = "Ctrl+C";
-            this.copyToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.copyToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.copyToolStripMenuItem.Text = "Copy";
             this.copyToolStripMenuItem.Click += new System.EventHandler(this.CopyToolStripMenuItem_Click);
             // 
@@ -251,20 +251,20 @@
             // 
             this.pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
             this.pasteToolStripMenuItem.ShortcutKeyDisplayString = "Ctrl+V";
-            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.pasteToolStripMenuItem.Text = "Paste";
             this.pasteToolStripMenuItem.Click += new System.EventHandler(this.PasteToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(167, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
             // 
             // selectAllToolStripMenuItem
             // 
             this.selectAllToolStripMenuItem.Name = "selectAllToolStripMenuItem";
             this.selectAllToolStripMenuItem.ShortcutKeyDisplayString = "Ctrl+A";
-            this.selectAllToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.selectAllToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.selectAllToolStripMenuItem.Text = "Select All";
             this.selectAllToolStripMenuItem.Click += new System.EventHandler(this.SelectAllToolStripMenuItem_Click);
             // 
@@ -274,7 +274,7 @@
             this.findDialogToolStripMenuItem,
             this.findAndReplaceToolStripMenuItem});
             this.searchToolStripMenuItem.Font = new System.Drawing.Font("Calibri", 10F);
-            this.searchToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Window;
+            this.searchToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.searchToolStripMenuItem.Name = "searchToolStripMenuItem";
             this.searchToolStripMenuItem.Size = new System.Drawing.Size(58, 21);
             this.searchToolStripMenuItem.Text = "Search";
@@ -304,7 +304,7 @@
             this.zoomOutToolStripMenuItem,
             this.zoom100ToolStripMenuItem});
             this.viewToolStripMenuItem.Font = new System.Drawing.Font("Calibri", 10F);
-            this.viewToolStripMenuItem.ForeColor = System.Drawing.SystemColors.Window;
+            this.viewToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
             this.viewToolStripMenuItem.Size = new System.Drawing.Size(48, 21);
             this.viewToolStripMenuItem.Text = "View";
@@ -315,7 +315,7 @@
             // 
             this.zoomInToolStripMenuItem.Name = "zoomInToolStripMenuItem";
             this.zoomInToolStripMenuItem.ShortcutKeyDisplayString = "";
-            this.zoomInToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.zoomInToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.zoomInToolStripMenuItem.Text = "Zoom In";
             this.zoomInToolStripMenuItem.Click += new System.EventHandler(this.ZoomInToolStripMenuItem_Click);
             // 
@@ -323,7 +323,7 @@
             // 
             this.zoomOutToolStripMenuItem.Name = "zoomOutToolStripMenuItem";
             this.zoomOutToolStripMenuItem.ShortcutKeyDisplayString = "";
-            this.zoomOutToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.zoomOutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.zoomOutToolStripMenuItem.Text = "Zoom Out";
             this.zoomOutToolStripMenuItem.Click += new System.EventHandler(this.ZoomOutToolStripMenuItem_Click);
             // 
@@ -331,7 +331,7 @@
             // 
             this.zoom100ToolStripMenuItem.Name = "zoom100ToolStripMenuItem";
             this.zoom100ToolStripMenuItem.ShortcutKeyDisplayString = "";
-            this.zoom100ToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.zoom100ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.zoom100ToolStripMenuItem.Text = "Zoom 100%";
             this.zoom100ToolStripMenuItem.Click += new System.EventHandler(this.Zoom100ToolStripMenuItem_Click);
             // 
@@ -340,6 +340,7 @@
             this.Panel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.Panel.BackColor = System.Drawing.Color.White;
             this.Panel.Location = new System.Drawing.Point(17, 38);
             this.Panel.Name = "Panel";
             this.Panel.Size = new System.Drawing.Size(635, 250);
@@ -350,7 +351,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(805, 374);
             this.Controls.Add(this.Panel);
             this.Controls.Add(this.execAsLuaC);

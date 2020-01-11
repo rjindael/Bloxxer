@@ -148,8 +148,8 @@ namespace Bloxxer_Bootstrapper
             Console.Title = "Bloxxer";
 
             WriteLine(@"____  _\n|  _ \| |\n| |_) | | _____  ____  _____ _ __\n|  _ <| |/ _ \ \/ /\ \/ / _ \ '__|\n| |_) | | (_) >  <  >  <  __/ |\n|____/|_|\___/_/\_\/_/\_\___|_|".Replace(@"\n", Environment.NewLine), ConsoleColor.Red);
-            WriteLine("Bloxxer_Bootstrapper v1.0.0 : Release\n");
-
+            WriteLine("By Zi#8552 : https://github.com/zi-blip/Bloxxer/", ConsoleColor.Red);
+            
             InitUpdate();
 
             WriteLine("Ready to go! Opening Bloxxer v" + Version, ConsoleColor.Blue);

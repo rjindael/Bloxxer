@@ -21,14 +21,14 @@ namespace Bloxxer.Utils
             { "show", "ExecutionMessage" },
             { "method", "ExecutionMessageMethod" },
             { "injectOnExecution", "InjectOnExecution" },
-            { "darkMode", "DarkMode" },
+            { "theme", "Theme" },
             { "bloxxerOnTop", "BloxxerOnTop" },
             { "robloxOnTop", "RobloxOnTop" }
         };
 
+        public static int Theme;
         public static int ExecutionMessageMethod;
         public static bool ExecutionMessage;
-        public static bool DarkMode;
         public static bool BloxxerOnTop;
         public static bool RobloxOnTop;
         public static bool InjectOnExecution;

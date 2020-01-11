@@ -2,8 +2,11 @@
 using System.Drawing;
 using System.Windows.Forms;
 using System.Diagnostics;
-using Newtonsoft.Json.Linq;
 using System.IO;
+using System.Collections.Generic;
+using System.Linq;
+using Newtonsoft.Json.Linq;
+using Bloxxer.Utils;
 
 namespace Bloxxer
 {
@@ -17,10 +20,56 @@ namespace Bloxxer
             MainForm = oldForm;
         }
 
+        #region Initialization
+
         private void ScriptHubForm_Load(object sender, EventArgs e)
         {
             InitScripts();
+            UpdateTheme();
             TopMost = true;
+        }
+
+        public IEnumerable<Control> GetAll(Control control, Type type)
+        {
+            var controls = control.Controls.Cast<Control>();
+
+            return controls.SelectMany(ctrl => GetAll(ctrl, type))
+                                       .Concat(controls)
+                                       .Where(c => c.GetType() == type);
+        }
+
+        private void UpdateTheme()
+        {
+            bool light = Convert.ToBoolean(GlobalVars.Theme);
+
+            Color background = light ? Color.FromArgb(255, 255, 255) : Color.FromArgb(25, 25, 25);
+            Color foreground = light ? Color.FromArgb(225, 225, 225) : Color.FromArgb(30, 30, 30);
+            Color text       = light ? Color.FromArgb(0, 0, 0)       : Color.FromArgb(255, 255, 255);
+
+            BackColor = background;
+
+            foreach (Control control in GetAll(this, typeof(Label)))
+            {
+                control.ForeColor = text;
+            }
+
+            foreach (Control control in GetAll(this, typeof(Button)))
+            {
+                control.BackColor = foreground;
+                control.ForeColor = text;
+            }
+
+            foreach (Control control in GetAll(this, typeof(ListView)))
+            {
+                control.BackColor = foreground;
+                control.ForeColor = text;
+            }
+
+            foreach (Control control in GetAll(this, typeof(RichTextBox)))
+            {
+                control.BackColor = foreground;
+                control.ForeColor = text;
+            }
         }
 
         private void InitScripts()
@@ -29,7 +78,7 @@ namespace Bloxxer
 
             foreach (string pack in Directory.GetDirectories(Directory.GetCurrentDirectory() + @"\scripts\"))
             {
-                string image = Directory.GetCurrentDirectory() + @"\resources\blank.png";
+                string image = Directory.GetCurrentDirectory() + @"\resources\blank_" + (GlobalVars.Theme == 1 ? "light" : "dark") + ".png";
                 string script = String.Empty;
                 JObject json = new JObject { new JProperty("empty", true) };
 
@@ -53,13 +102,6 @@ namespace Bloxxer
                     }
                 }
 
-                /* 
-                 * if ((json["empty"] as JToken) == null)
-                 * {
-                 *     return;
-                 * }
-                 */
-
                 ListViewItem item = new ListViewItem
                 {
                     Text = json["name"].ToString()
@@ -79,6 +121,9 @@ namespace Bloxxer
                 scriptList.Select();
             }
         }
+
+        #endregion
+        #region Form Events
 
         private void ScriptList_SelectedIndexChanged(object sender, EventArgs ev)
         {
@@ -116,5 +161,7 @@ namespace Bloxxer
                 MainForm.SetMonacoText(scriptList.SelectedItems[0].SubItems[5].Text);
             }
         }
+
+        #endregion
     }
 }

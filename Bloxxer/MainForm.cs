@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using Bloxxer.Utils;
@@ -33,11 +35,13 @@ namespace Bloxxer
         }
 
         #region Initialization
+
         private void MainForm_Load(object sender, EventArgs e)
         {
             InitPreferences();
             InitMonaco();
             LoadRecentList();
+            UpdateTheme();
         }
 
         private void InitPreferences()
@@ -45,7 +49,9 @@ namespace Bloxxer
             JsonManager.GetPreferences();
 
             if (!TopMost)
+            {
                 TopMost = GlobalVars.BloxxerOnTop;
+            }
 
             Process[] roblox = Process.GetProcessesByName("RobloxPlayerBeta");
             if (roblox.Length == 1)
@@ -54,13 +60,67 @@ namespace Bloxxer
             }
         }
 
+        public IEnumerable<Control> GetAll(Control control, Type type)
+        {
+            var controls = control.Controls.Cast<Control>();
+
+            return controls.SelectMany(ctrl => GetAll(ctrl, type))
+                                       .Concat(controls)
+                                       .Where(c => c.GetType() == type);
+        }
+
+        public void UpdateTheme()
+        {
+            string theme = GlobalVars.Theme == 1 ? "Light" : "Dark";
+            bool light = Convert.ToBoolean(GlobalVars.Theme);
+
+            Color background = light ? Color.FromArgb(255, 255, 255) : Color.FromArgb(25, 25, 25);
+            Color foreground = light ? Color.FromArgb(225, 225, 225) : Color.FromArgb(30, 30, 30);
+            Color text       = light ? Color.FromArgb(0, 0, 0)       : Color.FromArgb(255, 255, 255);
+
+            Monaco.ExecuteScriptAsyncWhenPageLoaded(String.Format("SetTheme(\"{0}\");", theme));
+            BackColor = background;
+
+            foreach (Control control in GetAll(this, typeof(Button)))
+            {
+                control.BackColor = foreground;
+                control.ForeColor = text;
+            }
+
+            foreach (Control control in GetAll(this, typeof(ListView)))
+            {
+                control.BackColor = foreground;
+                control.ForeColor = text;
+            }
+
+            foreach (Control control in GetAll(this, typeof(Label)))
+            {
+                control.ForeColor = text;
+            }
+
+            foreach (Control control in GetAll(this, typeof(CheckBox)))
+            {
+                control.ForeColor = text;
+            }
+
+            foreach (Control control in GetAll(this, typeof(Panel)))
+            {
+                control.BackColor = text;
+            }
+
+            foreach (Control control in GetAll(this, typeof(MenuStrip)))
+            {
+                control.BackColor = foreground;
+                control.ForeColor = text;
+                foreach (ToolStripMenuItem item in (control as MenuStrip).Items)
+                {
+                    item.ForeColor = text;
+                }
+            }
+        }
+
         #endregion
         #region Monaco
-
-        public void ChangeMonacoTheme(string theme)
-        {
-            Monaco.ExecuteScriptAsyncWhenPageLoaded(String.Format("SetTheme(\"{0}\");", theme));
-        }
 
         public void SetMonacoText(string text)
         {
@@ -78,8 +138,6 @@ namespace Bloxxer
             Monaco = new ChromiumWebBrowser(string.Format("file:///{0}/monaco/monaco.html", Directory.GetCurrentDirectory()));
             Panel.Controls.Add(Monaco);
             Monaco.Dock = DockStyle.Fill;
-
-            Monaco.ExecuteScriptAsyncWhenPageLoaded(String.Format("SetTheme(\"{0}\");", (GlobalVars.DarkMode ? "Dark" : "Light")));
 
             // Syntax highlighting for Monaco
             JObject definitions = JObject.Parse(File.ReadAllText(Directory.GetCurrentDirectory() + @"\monaco\definitions.json"));
@@ -276,41 +334,49 @@ namespace Bloxxer
 
         private void FileToolStripMenuItem_DropDownOpened(object sender, EventArgs e)
         {
+            if (GlobalVars.Theme == 1) return;
             fileToolStripMenuItem.ForeColor = SystemColors.WindowText;
         }
 
         private void FileToolStripMenuItem_DropDownClosed(object sender, EventArgs e)
         {
+            if (GlobalVars.Theme == 1) return;
             fileToolStripMenuItem.ForeColor = SystemColors.Window;
         }
 
         private void EditToolStripMenuItem_DropDownOpened(object sender, EventArgs e)
         {
+            if (GlobalVars.Theme == 1) return;
             editToolStripMenuItem.ForeColor = SystemColors.WindowText;
         }
 
         private void EditToolStripMenuItem_DropDownClosed(object sender, EventArgs e)
         {
+            if (GlobalVars.Theme == 1) return;
             editToolStripMenuItem.ForeColor = SystemColors.Window;
         }
 
         private void SearchToolStripMenuItem_DropDownOpened(object sender, EventArgs e)
         {
+            if (GlobalVars.Theme == 1) return;
             searchToolStripMenuItem.ForeColor = SystemColors.WindowText;
         }
 
         private void SearchToolStripMenuItem_DropDownClosed(object sender, EventArgs e)
         {
+            if (GlobalVars.Theme == 1) return;
             searchToolStripMenuItem.ForeColor = SystemColors.Window;    
         }
 
         private void ViewToolStripMenuItem_DropDownOpened(object sender, EventArgs e)
         {
+            if (GlobalVars.Theme == 1) return;
             viewToolStripMenuItem.ForeColor = SystemColors.WindowText;
         }
 
         private void ViewToolStripMenuItem_DropDownClosed(object sender, EventArgs e)
         {
+            if (GlobalVars.Theme == 1) return;
             viewToolStripMenuItem.ForeColor = SystemColors.Window;
         }
 
