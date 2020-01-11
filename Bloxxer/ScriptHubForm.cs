@@ -136,7 +136,7 @@ namespace Bloxxer
                 versionLabel.Text = "Version: " + selected.SubItems[3].Text;
                 imagePanel.BackgroundImage = Image.FromFile(selected.SubItems[4].Text);
             }
-            catch (Exception) { }
+            catch { }
         }
 
         private void LoadBtn_Click(object sender, EventArgs e)

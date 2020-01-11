@@ -19,8 +19,10 @@ namespace Bloxxer.Utils
             {
                 var obj = JsonValue.Parse(File.ReadAllText(PrerequisitesPath));
             }
-            catch (FormatException) { valid = false;  }
-            catch (Exception)       { valid = false;  }
+            catch
+            {
+                valid = false;
+            }
 
             if (!valid)
             {
