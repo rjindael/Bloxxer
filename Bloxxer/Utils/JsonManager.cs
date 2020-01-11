@@ -4,13 +4,12 @@ using System.IO;
 using System.Linq;
 using Newtonsoft.Json.Linq;
 using System.Json;
-using System.Windows.Forms;
 
 namespace Bloxxer.Utils
 {
     public class JsonManager
     {
-        private static readonly string PrerequisitesPath = Directory.GetCurrentDirectory() + @"\resources\prerequisites.json";
+        private static readonly string PrerequisitesPath = Environment.CurrentDirectory + @"\resources\prerequisites.json";
 
         private static void CheckValidJson()
         {
@@ -35,7 +34,7 @@ namespace Bloxxer.Utils
             {
                 File.Create(PrerequisitesPath);
             }
-            MessageBox.Show("y");
+            
             var prerequisites = new JObject {
                 new JProperty("configuration", new JObject {
                     new JProperty("version", Properties.Resources.Version)
@@ -44,7 +43,7 @@ namespace Bloxxer.Utils
                     new JProperty("execution", new JObject {
                         new JProperty("show", false),
                         new JProperty("method", 0),
-                        new JProperty("injectOnExecute", false)
+                        new JProperty("injectOnExecution", false)
                     }),
                     new JProperty("darkMode", true),
                     new JProperty("bloxxerOnTop", false),
@@ -58,7 +57,7 @@ namespace Bloxxer.Utils
 
         public static void GetPreferences()
         {
-            JObject json = JsonManager.GetJson();
+            JObject json = GetJson();
             JToken preferences = json["preferences"];
 
             GlobalVars.RobloxOnTop             = Convert.ToBoolean(preferences["robloxOnTop"]);
@@ -77,17 +76,15 @@ namespace Bloxxer.Utils
         public static JObject GetJson()
         {
             CheckValidJson();
-            string json = File.ReadAllText(PrerequisitesPath);
 
-            return JObject.Parse(json);
+            return JObject.Parse(File.ReadAllText(PrerequisitesPath));
         }
 
         public static IList<string> GetRecentlyUsed()
         {
             CheckValidJson();
-            string json = File.ReadAllText(PrerequisitesPath);
-            JObject parsedJson = JObject.Parse(json);
 
+            JObject parsedJson = JObject.Parse(File.ReadAllText(PrerequisitesPath));
             return parsedJson["preferences"]["recentlyUsed"].Select(s => (string)s).ToList();
         }
     }

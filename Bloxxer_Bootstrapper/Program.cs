@@ -12,8 +12,29 @@ namespace Bloxxer_Bootstrapper
         private static readonly string PrerequisitesPath = Directory.GetCurrentDirectory() + @"\current\resources\prerequisites.json";
         private static readonly string CurrentPath = Directory.GetCurrentDirectory() + @"\current\";
         private static readonly string ReleaseUrl = "https://api.github.com/repos/zi-blip/Bloxxer/releases/latest";
-        private static string Version;
         private static bool FirstInstall = false;
+        private static string Version;
+
+        public static void DeleteDirectory(string path)
+        {
+            foreach (string directory in Directory.GetDirectories(path))
+            {
+                DeleteDirectory(directory);
+            }
+
+            try
+            {
+                Directory.Delete(path, true);
+            }
+            catch (IOException)
+            {
+                Directory.Delete(path, true);
+            }
+            catch (UnauthorizedAccessException)
+            {
+                Directory.Delete(path, true);
+            }
+        }
 
         private static void WriteLine(string message, ConsoleColor color = ConsoleColor.White)
         {
@@ -24,11 +45,14 @@ namespace Bloxxer_Bootstrapper
 
         private static void Update()
         {
+            // NOTE: This bootstrapper ONLY works if the the asset from github containing the Build files (Bloxxer, Bloxxer_Bootstrapper, BuildOutput\*, CefSharp bin files) ends with the "zip" extension
+
             JObject responseJson;
             Process[] bloxxers = Process.GetProcessesByName("Bloxxer.exe");
 
             using (WebClient web = new WebClient())
             {
+                web.Headers.Add("user-agent", "Bloxxer_Bootstrapper");
                 responseJson = JObject.Parse(web.DownloadString(ReleaseUrl));
             }
 
@@ -45,22 +69,39 @@ namespace Bloxxer_Bootstrapper
             {
                 try
                 {
+                    web.Headers.Add("user-agent", "Bloxxer_Bootstrapper");
+
                     string currentDirectory = Directory.GetCurrentDirectory() + @"\current";
-                    string url = responseJson["assets"][0]["browser_download_url"].ToString();
-                    string fileName = url.Substring(url.LastIndexOf("/" + 1)) + ".zip";
+                    string url = string.Empty;
+                    string fileName = string.Empty;
 
-                    web.DownloadFile(url, Directory.GetCurrentDirectory() + @"\bootstrapper\" + fileName);
+                    foreach (JObject asset in responseJson["assets"])
+                    {
+                        if (asset["browser_download_url"].ToString().Contains(".zip"))
+                        {
+                            url = asset["browser_download_url"].ToString();
+                        }
+                    }
 
-                    Directory.Delete(currentDirectory);
+                    fileName = Directory.GetCurrentDirectory() + @"\" + url.Substring(url.LastIndexOf("/") + 1);
+                    web.DownloadFile(url, fileName);
+
+                    if (Directory.Exists(currentDirectory))
+                    {
+                        DeleteDirectory(currentDirectory);
+                    }
                     Directory.CreateDirectory(currentDirectory);
 
                     ZipFile.ExtractToDirectory(fileName, currentDirectory);
+                    File.Delete(fileName);
+
+                    Version = JObject.Parse(File.ReadAllText(PrerequisitesPath))["configuration"]["version"].ToString();
                 }
                 catch (Exception)
                 {
                     if (FirstInstall)
                     {
-                        WriteLine("Fatal error occurred while updating, closing bootstrapper!");
+                        WriteLine("Fatal error occurred while updating, closing bootstrapper!", ConsoleColor.Red);
                         Environment.Exit(0);
                     }
 
@@ -72,26 +113,26 @@ namespace Bloxxer_Bootstrapper
 
         private static void InitUpdate()
         {
-            // NOTE: This bootstrapper ONLY works if the only assets are the zip file from github containing everything
-            //       (Bloxxer, Bloxxer_Bootstrapper, BuildOutput\*, CefSharp bin files)
-
             WriteLine("Checking version...", ConsoleColor.DarkGreen);
-            FirstInstall = !Directory.Exists(CurrentPath);
+            FirstInstall = !Directory.Exists(CurrentPath) || !File.Exists(PrerequisitesPath);
             
             if (FirstInstall)
             {
+                WriteLine("This seems to be the first install, installing!", ConsoleColor.Yellow);
                 Update();
             }
             else
             {
                 Version = JObject.Parse(File.ReadAllText(PrerequisitesPath))["configuration"]["version"].ToString();
+
                 JObject responseJson;
                 using (WebClient web = new WebClient())
                 {
+                    web.Headers.Add("user-agent", "Bloxxer_Bootstrapper");
                     responseJson = JObject.Parse(web.DownloadString(ReleaseUrl));
                 }
 
-                if (responseJson["tag_name"].ToString().Replace("v", "") == JObject.Parse(File.ReadAllText(PrerequisitesPath))["configuration"]["version"].ToString())
+                if (responseJson["tag_name"].ToString().Replace("v", "") == Version)
                 {
                     return;
                 }
@@ -112,7 +153,8 @@ namespace Bloxxer_Bootstrapper
             InitUpdate();
 
             WriteLine("Ready to go! Opening Bloxxer v" + Version, ConsoleColor.Blue);
-            Process.Start("Bloxxer.exe");
+
+            Process.Start(Directory.GetCurrentDirectory() + @"\current\Bloxxer.exe");
             Environment.Exit(0);
         }
     }

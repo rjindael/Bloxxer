@@ -32,23 +32,22 @@ namespace Bloxxer
             JsonManager.GetPreferences();
             TopMost = true;
 
-            robloxOnTopChkBox.Checked = GlobalVars.RobloxOnTop;
-            bloxxerOnTopChkBox.Checked = GlobalVars.BloxxerOnTop;
-            injectExecChkBox.Checked = GlobalVars.InjectOnExecution;
-            scriptExecCheckBox.Checked = GlobalVars.ExecutionMessage;
-            notifyOption.SelectedIndex = GlobalVars.ExecutionMessageMethod;
+            robloxOnTopCheckBox.Checked  = GlobalVars.RobloxOnTop;
+            bloxxerOnTopCheckBox.Checked = GlobalVars.BloxxerOnTop;
+            injectExecCheckBox.Checked   = GlobalVars.InjectOnExecution;
+            scriptExecCheckBox.Checked   = GlobalVars.ExecutionMessage;
+            notifyOption.SelectedIndex   = GlobalVars.ExecutionMessageMethod;
 
-            notifyOption.Enabled = GlobalVars.ExecutionMessage;
-            notifyLabel.ForeColor = (GlobalVars.ExecutionMessage ? SystemColors.Window : SystemColors.ScrollBar);
+            notifyOption.Enabled         = GlobalVars.ExecutionMessage;
+            notifyLabel.ForeColor        = GlobalVars.ExecutionMessage ? SystemColors.Window : SystemColors.ScrollBar;
         }
 
         private void SaveJson(object value, string jsonLocation)
         {
             string[] location = jsonLocation.Split('.');
             JObject json = JsonManager.GetJson();
-            JObject config = (location[0] == "execution" ? json["preferences"]["execution"] : json["preferences"]) as JObject;
 
-            config[location[location.Length - 1]] = JToken.FromObject(value);
+            (location[0] == "execution" ? json["preferences"]["execution"] : json["preferences"])[location[location.Length - 1]] = JToken.FromObject(value);
             JsonManager.SaveJson(json.ToString());
             GlobalVars.SetProperty(GlobalVars.GlobalValues[location[location.Length - 1].ToString()], value);
         }
@@ -67,30 +66,30 @@ namespace Bloxxer
 
         private void IsDarkModeCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            SaveJson(isDarkModeCheckBox.Enabled, "darkMode");
+            SaveJson(isDarkModeCheckBox.Checked, "darkMode");
             MainForm.ChangeMonacoTheme(GlobalVars.DarkMode ? "Dark" : "Light");
         }
 
-        private void BloxxerOnTopChkBox_CheckedChanged(object sender, EventArgs e)
+        private void BloxxerOnTopCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            SaveJson(bloxxerOnTopChkBox.Enabled, "bloxxerOnTop");
-            MainForm.TopMost = bloxxerOnTopChkBox.Checked;
+            SaveJson(bloxxerOnTopCheckBox.Checked, "bloxxerOnTop");
+            MainForm.TopMost = bloxxerOnTopCheckBox.Checked;
         }
 
-        private void RobloxOnTopChkBox_CheckedChanged(object sender, EventArgs e)
+        private void InjectExecCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            SaveJson(robloxOnTopChkBox.Enabled, "robloxOnTop");
+            SaveJson(injectExecCheckBox.Checked, "execution.injectOnExecution");
+        }
+
+        private void RobloxOnTopCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            SaveJson(robloxOnTopCheckBox.Checked, "robloxOnTop");
 
             Process[] roblox = Process.GetProcessesByName("RobloxPlayerBeta");
             if (roblox.Length == 1)
             {
                 SetWindowPos(roblox[0].MainWindowHandle, (GlobalVars.RobloxOnTop ? HWND_TOPMOST : HWND_NOTOPMOST), 0, 0, 0, 0, TOPMOST_FLAGS);
             }
-        }
-
-        private void InjectExecChkBox_CheckedChanged(object sender, EventArgs e)
-        {
-            SaveJson(injectExecChkBox.Checked, "injectOnExecute");
         }
     }
 }

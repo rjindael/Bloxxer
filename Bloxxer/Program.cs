@@ -11,6 +11,8 @@ namespace Bloxxer {
 		/// </summary>
 		[STAThread]
 		static void Main() {
+            Environment.CurrentDirectory = Environment.CurrentDirectory + @"\current";
+
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(mainForm = new MainForm());

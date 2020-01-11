@@ -33,9 +33,9 @@
             this.notifyLabel = new System.Windows.Forms.Label();
             this.notifyOption = new System.Windows.Forms.ComboBox();
             this.isDarkModeCheckBox = new System.Windows.Forms.CheckBox();
-            this.bloxxerOnTopChkBox = new System.Windows.Forms.CheckBox();
-            this.robloxOnTopChkBox = new System.Windows.Forms.CheckBox();
-            this.injectExecChkBox = new System.Windows.Forms.CheckBox();
+            this.bloxxerOnTopCheckBox = new System.Windows.Forms.CheckBox();
+            this.robloxOnTopCheckBox = new System.Windows.Forms.CheckBox();
+            this.injectExecCheckBox = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -93,46 +93,46 @@
             this.isDarkModeCheckBox.UseVisualStyleBackColor = true;
             this.isDarkModeCheckBox.CheckedChanged += new System.EventHandler(this.IsDarkModeCheckBox_CheckedChanged);
             // 
-            // bloxxerOnTopChkBox
+            // bloxxerOnTopCheckBox
             // 
-            this.bloxxerOnTopChkBox.AutoSize = true;
-            this.bloxxerOnTopChkBox.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.bloxxerOnTopChkBox.ForeColor = System.Drawing.SystemColors.Window;
-            this.bloxxerOnTopChkBox.Location = new System.Drawing.Point(12, 107);
-            this.bloxxerOnTopChkBox.Name = "bloxxerOnTopChkBox";
-            this.bloxxerOnTopChkBox.Size = new System.Drawing.Size(138, 17);
-            this.bloxxerOnTopChkBox.TabIndex = 4;
-            this.bloxxerOnTopChkBox.Text = "Bloxxer always on top";
-            this.bloxxerOnTopChkBox.UseVisualStyleBackColor = true;
-            this.bloxxerOnTopChkBox.CheckedChanged += new System.EventHandler(this.BloxxerOnTopChkBox_CheckedChanged);
+            this.bloxxerOnTopCheckBox.AutoSize = true;
+            this.bloxxerOnTopCheckBox.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.bloxxerOnTopCheckBox.ForeColor = System.Drawing.SystemColors.Window;
+            this.bloxxerOnTopCheckBox.Location = new System.Drawing.Point(12, 107);
+            this.bloxxerOnTopCheckBox.Name = "bloxxerOnTopCheckBox";
+            this.bloxxerOnTopCheckBox.Size = new System.Drawing.Size(138, 17);
+            this.bloxxerOnTopCheckBox.TabIndex = 4;
+            this.bloxxerOnTopCheckBox.Text = "Bloxxer always on top";
+            this.bloxxerOnTopCheckBox.UseVisualStyleBackColor = true;
+            this.bloxxerOnTopCheckBox.CheckedChanged += new System.EventHandler(this.BloxxerOnTopCheckBox_CheckedChanged);
             // 
-            // robloxOnTopChkBox
+            // robloxOnTopCheckBox
             // 
-            this.robloxOnTopChkBox.AutoSize = true;
-            this.robloxOnTopChkBox.Checked = true;
-            this.robloxOnTopChkBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.robloxOnTopChkBox.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.robloxOnTopChkBox.ForeColor = System.Drawing.SystemColors.Window;
-            this.robloxOnTopChkBox.Location = new System.Drawing.Point(12, 85);
-            this.robloxOnTopChkBox.Name = "robloxOnTopChkBox";
-            this.robloxOnTopChkBox.Size = new System.Drawing.Size(137, 17);
-            this.robloxOnTopChkBox.TabIndex = 5;
-            this.robloxOnTopChkBox.Text = "Roblox always on top";
-            this.robloxOnTopChkBox.UseVisualStyleBackColor = true;
-            this.robloxOnTopChkBox.CheckedChanged += new System.EventHandler(this.RobloxOnTopChkBox_CheckedChanged);
+            this.robloxOnTopCheckBox.AutoSize = true;
+            this.robloxOnTopCheckBox.Checked = true;
+            this.robloxOnTopCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.robloxOnTopCheckBox.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.robloxOnTopCheckBox.ForeColor = System.Drawing.SystemColors.Window;
+            this.robloxOnTopCheckBox.Location = new System.Drawing.Point(12, 85);
+            this.robloxOnTopCheckBox.Name = "robloxOnTopCheckBox";
+            this.robloxOnTopCheckBox.Size = new System.Drawing.Size(137, 17);
+            this.robloxOnTopCheckBox.TabIndex = 5;
+            this.robloxOnTopCheckBox.Text = "Roblox always on top";
+            this.robloxOnTopCheckBox.UseVisualStyleBackColor = true;
+            this.robloxOnTopCheckBox.CheckedChanged += new System.EventHandler(this.RobloxOnTopCheckBox_CheckedChanged);
             // 
-            // injectExecChkBox
+            // injectExecCheckBox
             // 
-            this.injectExecChkBox.AutoSize = true;
-            this.injectExecChkBox.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.injectExecChkBox.ForeColor = System.Drawing.SystemColors.Window;
-            this.injectExecChkBox.Location = new System.Drawing.Point(12, 130);
-            this.injectExecChkBox.Name = "injectExecChkBox";
-            this.injectExecChkBox.Size = new System.Drawing.Size(284, 17);
-            this.injectExecChkBox.TabIndex = 6;
-            this.injectExecChkBox.Text = "Inject upon script execution if not injected already";
-            this.injectExecChkBox.UseVisualStyleBackColor = true;
-            this.injectExecChkBox.CheckedChanged += new System.EventHandler(this.InjectExecChkBox_CheckedChanged);
+            this.injectExecCheckBox.AutoSize = true;
+            this.injectExecCheckBox.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.injectExecCheckBox.ForeColor = System.Drawing.SystemColors.Window;
+            this.injectExecCheckBox.Location = new System.Drawing.Point(12, 130);
+            this.injectExecCheckBox.Name = "injectExecCheckBox";
+            this.injectExecCheckBox.Size = new System.Drawing.Size(284, 17);
+            this.injectExecCheckBox.TabIndex = 6;
+            this.injectExecCheckBox.Text = "Inject upon script execution if not injected already";
+            this.injectExecCheckBox.UseVisualStyleBackColor = true;
+            this.injectExecCheckBox.CheckedChanged += new System.EventHandler(this.InjectExecCheckBox_CheckedChanged);
             // 
             // label1
             // 
@@ -151,9 +151,9 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             this.ClientSize = new System.Drawing.Size(334, 167);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.injectExecChkBox);
-            this.Controls.Add(this.robloxOnTopChkBox);
-            this.Controls.Add(this.bloxxerOnTopChkBox);
+            this.Controls.Add(this.injectExecCheckBox);
+            this.Controls.Add(this.robloxOnTopCheckBox);
+            this.Controls.Add(this.bloxxerOnTopCheckBox);
             this.Controls.Add(this.isDarkModeCheckBox);
             this.Controls.Add(this.notifyOption);
             this.Controls.Add(this.notifyLabel);
@@ -176,9 +176,9 @@
         private System.Windows.Forms.Label notifyLabel;
         private System.Windows.Forms.ComboBox notifyOption;
         private System.Windows.Forms.CheckBox isDarkModeCheckBox;
-        private System.Windows.Forms.CheckBox bloxxerOnTopChkBox;
-        private System.Windows.Forms.CheckBox robloxOnTopChkBox;
-        private System.Windows.Forms.CheckBox injectExecChkBox;
+        private System.Windows.Forms.CheckBox bloxxerOnTopCheckBox;
+        private System.Windows.Forms.CheckBox robloxOnTopCheckBox;
+        private System.Windows.Forms.CheckBox injectExecCheckBox;
         private System.Windows.Forms.Label label1;
     }
 }
