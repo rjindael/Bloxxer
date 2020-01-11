@@ -1,0 +1,6 @@
+{
+	"name": "Infinite Yield",
+	"description": "A powerful admin suite for Roblox games\n\nFeatures:\n- Keybinds that can be binded to ANY key\n- Ability to set waypoints\n- Plugins to allow you to create and share your own commands\n- Undetected on most games\n- Ability to set command aliases\n- Chat and whisper logs\n- Freecam\n- Built-in ESP / chams / Xray\n- Minimal UI\n- Ability to set commands to run when you spawn\n- 110+ built-in commands",
+	"version": "2.5.0",
+	"author": "Edge, ZWolf, Moon"
+}

@@ -1,0 +1,6 @@
+{
+	"name": "ZiSuite",
+	"description": "A general hacking suite for games.\n\nKeybinds:\n'E' to toggle noclip\n'X' to toggle XRay\n'H' to toggle Infinite Jump\n'LeftCtrl' to teleport to mouse\n'Shift' to sprint",
+	"version": "1.0.0",
+	"author": "Zi"
+}

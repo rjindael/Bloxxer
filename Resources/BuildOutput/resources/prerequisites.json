@@ -1,0 +1,16 @@
+{
+  "configuration": {
+	"version": "1.0.0"
+  },
+  "preferences": {
+    "execution": {
+      "show": false,
+      "method": 0,
+      "injectOnExecute": false
+    },
+    "darkMode": true,
+    "bloxxerOnTop": false,
+    "robloxOnTop": true,
+	"recentlyUsed": []
+  }
+}

@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29001.49
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bloxxer", "Bloxxer\Bloxxer.csproj", "{69CE0FB9-99CF-4A40-A0AB-E39F5050054E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bloxxer_Bootstrapper", "Bloxxer_Bootstrapper\Bloxxer_Bootstrapper.csproj", "{D90A3CA3-EB9A-4DD0-AEC5-452F1C1407EF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{69CE0FB9-99CF-4A40-A0AB-E39F5050054E}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{69CE0FB9-99CF-4A40-A0AB-E39F5050054E}.Debug|Any CPU.Build.0 = Release|Any CPU
+		{69CE0FB9-99CF-4A40-A0AB-E39F5050054E}.Debug|x86.ActiveCfg = Debug|x86
+		{69CE0FB9-99CF-4A40-A0AB-E39F5050054E}.Debug|x86.Build.0 = Debug|x86
+		{69CE0FB9-99CF-4A40-A0AB-E39F5050054E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69CE0FB9-99CF-4A40-A0AB-E39F5050054E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69CE0FB9-99CF-4A40-A0AB-E39F5050054E}.Release|x86.ActiveCfg = Release|x86
+		{69CE0FB9-99CF-4A40-A0AB-E39F5050054E}.Release|x86.Build.0 = Release|x86
+		{D90A3CA3-EB9A-4DD0-AEC5-452F1C1407EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D90A3CA3-EB9A-4DD0-AEC5-452F1C1407EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D90A3CA3-EB9A-4DD0-AEC5-452F1C1407EF}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D90A3CA3-EB9A-4DD0-AEC5-452F1C1407EF}.Debug|x86.Build.0 = Debug|Any CPU
+		{D90A3CA3-EB9A-4DD0-AEC5-452F1C1407EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D90A3CA3-EB9A-4DD0-AEC5-452F1C1407EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D90A3CA3-EB9A-4DD0-AEC5-452F1C1407EF}.Release|x86.ActiveCfg = Release|Any CPU
+		{D90A3CA3-EB9A-4DD0-AEC5-452F1C1407EF}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {006E9992-4682-4F3A-96F0-01468D7F1DA3}
+	EndGlobalSection
+EndGlobal
