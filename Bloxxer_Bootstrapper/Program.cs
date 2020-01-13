@@ -126,8 +126,8 @@ namespace Bloxxer_Bootstrapper
             catch
             {
                 WriteLine("Could not establish an internet connection, skipping updater!", ConsoleColor.Red);
+                return;
             }
-            
             
             if (FirstInstall)
             {
