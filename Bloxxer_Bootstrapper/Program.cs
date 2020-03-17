@@ -166,7 +166,7 @@ namespace Bloxxer_Bootstrapper
             Console.Title = "Bloxxer";
 
             WriteLine(@"____  _\n|  _ \| |\n| |_) | | _____  ____  _____ _ __\n|  _ <| |/ _ \ \/ /\ \/ / _ \ '__|\n| |_) | | (_) >  <  >  <  __/ |\n|____/|_|\___/_/\_\/_/\_\___|_|".Replace(@"\n", Environment.NewLine), ConsoleColor.Green);
-            WriteLine("By Zi#8552 : https://github.com/lighterlightbulb/Bloxxer/", ConsoleColor.Green);
+            WriteLine("By lightlight#8552 : https://github.com/lighterlightbulb/Bloxxer/", ConsoleColor.Green);
             
             InitUpdate();
 
