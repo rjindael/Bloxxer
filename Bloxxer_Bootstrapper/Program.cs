@@ -11,7 +11,7 @@ namespace Bloxxer_Bootstrapper
     {
         private static readonly string PrerequisitesPath = Directory.GetCurrentDirectory() + @"\current\resources\prerequisites.json";
         private static readonly string CurrentPath = Directory.GetCurrentDirectory() + @"\current\";
-        private static readonly string ReleaseUrl = "https://api.github.com/repos/zi-blip/Bloxxer/releases/latest";
+        private static readonly string ReleaseUrl = "https://api.github.com/repos/lighterlightbulb/Bloxxer/releases/latest";
         private static bool FirstInstall = false;
         private static string Version;
 
@@ -166,7 +166,7 @@ namespace Bloxxer_Bootstrapper
             Console.Title = "Bloxxer";
 
             WriteLine(@"____  _\n|  _ \| |\n| |_) | | _____  ____  _____ _ __\n|  _ <| |/ _ \ \/ /\ \/ / _ \ '__|\n| |_) | | (_) >  <  >  <  __/ |\n|____/|_|\___/_/\_\/_/\_\___|_|".Replace(@"\n", Environment.NewLine), ConsoleColor.Green);
-            WriteLine("By Zi#8552 : https://github.com/zi-blip/Bloxxer/", ConsoleColor.Green);
+            WriteLine("By Zi#8552 : https://github.com/lighterlightbulb/Bloxxer/", ConsoleColor.Green);
             
             InitUpdate();
 
